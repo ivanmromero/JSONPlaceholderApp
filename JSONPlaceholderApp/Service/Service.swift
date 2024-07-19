@@ -15,35 +15,51 @@ class Service {
             return
         }
         
+        fetchData(for: url, completion: completion)
+    }
+    
+    func fetchData<T: Decodable>(for url: URL?, completion: @escaping (Result<T, ServiceError>) -> ()) {
+        fetchData(for: url) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let decodedData = try JSONDecoder().decode(T.self, from: data)
+                    completion(.success(decodedData))
+                } catch {
+                    completion(.failure(.decodingError(localizedDescription: error.localizedDescription)))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func fetchData(for url: URL?, completion: @escaping (Result<Data, ServiceError>) -> ()) {
+        guard let url = url else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
         URLSession.shared.dataTask(with: url) { data, response, error in
             let statusCode: Int? = (response as? HTTPURLResponse)?.statusCode
             
             if let error = error {
                 completion(.failure(.requestFailed(statusCode: statusCode ?? 0, localizedDescription: error.localizedDescription)))
+                return
             }
             
-            guard let data = data
-            else {
+            guard let data = data else {
                 completion(.failure(.nilData))
                 return
             }
             
-            guard let statusCode = statusCode,
-                  (200...299).contains(statusCode)
-            else {
+            guard let statusCode = statusCode, (200...299).contains(statusCode) else {
                 completion(.failure(.requestFailed(statusCode: statusCode ?? 0)))
                 return
             }
             
-            do {
-                let decodedData = try JSONDecoder().decode(T.self, from: data)
-                completion(.success(decodedData))
-                return
-            }
-            catch {
-                completion(.failure(.decodingError(localizedDescription: error.localizedDescription)))
-                return
-            }
+            completion(.success(data))
+            
         }.resume()
     }
     
