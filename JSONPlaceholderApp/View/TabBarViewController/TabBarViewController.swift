@@ -1,6 +1,6 @@
 //
 //  TabBarViewController.swift
-//  JSONPlaceholder
+//  JSONPlaceholderApp
 //
 //  Created by Ivan Romero on 18/07/2024.
 //
