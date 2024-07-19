@@ -13,6 +13,11 @@
 		D2C1E8482C49DA0E003DEA20 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D2C1E8472C49DA0E003DEA20 /* Base */; };
 		D2C1E8562C49DD28003DEA20 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C1E8552C49DD28003DEA20 /* TabBarViewController.swift */; };
 		D2C1E8592C49DD4A003DEA20 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C1E8582C49DD4A003DEA20 /* UIViewController+Extensions.swift */; };
+		D2C1E8632C49F0EB003DEA20 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C1E8602C49F0EB003DEA20 /* Service.swift */; };
+		D2C1E8642C49F0EB003DEA20 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C1E8612C49F0EB003DEA20 /* ServiceError.swift */; };
+		D2C1E8652C49F0EB003DEA20 /* ServicePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C1E8622C49F0EB003DEA20 /* ServicePath.swift */; };
+		D2C1E8682C49F171003DEA20 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C1E8662C49F171003DEA20 /* UserModel.swift */; };
+		D2C1E8692C49F171003DEA20 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C1E8672C49F171003DEA20 /* NewsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		D2C1E8492C49DA0E003DEA20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2C1E8552C49DD28003DEA20 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D2C1E8582C49DD4A003DEA20 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		D2C1E8602C49F0EB003DEA20 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		D2C1E8612C49F0EB003DEA20 /* ServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		D2C1E8622C49F0EB003DEA20 /* ServicePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicePath.swift; sourceTree = "<group>"; };
+		D2C1E8662C49F171003DEA20 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		D2C1E8672C49F171003DEA20 /* NewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 		D2C1E83A2C49DA0D003DEA20 /* JSONPlaceholderApp */ = {
 			isa = PBXGroup;
 			children = (
+				D2C1E85F2C49F0D1003DEA20 /* Service */,
 				D2C1E8522C49DBCA003DEA20 /* Model */,
 				D2C1E8512C49DBC3003DEA20 /* ViewModel */,
 				D2C1E8502C49DBB5003DEA20 /* View */,
@@ -95,6 +106,8 @@
 		D2C1E8522C49DBCA003DEA20 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D2C1E8672C49F171003DEA20 /* NewsModel.swift */,
+				D2C1E8662C49F171003DEA20 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,6 +134,16 @@
 				D2C1E8582C49DD4A003DEA20 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D2C1E85F2C49F0D1003DEA20 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D2C1E8602C49F0EB003DEA20 /* Service.swift */,
+				D2C1E8612C49F0EB003DEA20 /* ServiceError.swift */,
+				D2C1E8622C49F0EB003DEA20 /* ServicePath.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,8 +216,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2C1E8642C49F0EB003DEA20 /* ServiceError.swift in Sources */,
+				D2C1E8652C49F0EB003DEA20 /* ServicePath.swift in Sources */,
+				D2C1E8682C49F171003DEA20 /* UserModel.swift in Sources */,
+				D2C1E8692C49F171003DEA20 /* NewsModel.swift in Sources */,
 				D2C1E8592C49DD4A003DEA20 /* UIViewController+Extensions.swift in Sources */,
 				D2C1E83C2C49DA0D003DEA20 /* AppDelegate.swift in Sources */,
+				D2C1E8632C49F0EB003DEA20 /* Service.swift in Sources */,
 				D2C1E8562C49DD28003DEA20 /* TabBarViewController.swift in Sources */,
 				D2C1E83E2C49DA0D003DEA20 /* SceneDelegate.swift in Sources */,
 			);
