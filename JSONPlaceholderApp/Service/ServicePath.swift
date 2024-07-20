@@ -8,6 +8,6 @@
 enum ServicePath: String {
     case allPosts = "posts"
     case allUsers = "users"
-    
+
     var path: String { "/\(self.rawValue)"}
 }

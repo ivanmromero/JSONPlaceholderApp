@@ -287,7 +287,6 @@
 				D2C1E8342C49DA0D003DEA20 /* Sources */,
 				D2C1E8352C49DA0D003DEA20 /* Frameworks */,
 				D2C1E8362C49DA0D003DEA20 /* Resources */,
-				269E27D7868D249164C644FC /* [CP] Copy Pods Resources */,
 				D25393312C4C506000DEF9F8 /* Swift Lint */,
 			);
 			buildRules = (
@@ -350,23 +349,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		269E27D7868D249164C644FC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JSONPlaceholderApp/Pods-JSONPlaceholderApp-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JSONPlaceholderApp/Pods-JSONPlaceholderApp-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JSONPlaceholderApp/Pods-JSONPlaceholderApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D25393312C4C506000DEF9F8 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
