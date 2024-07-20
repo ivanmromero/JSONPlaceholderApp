@@ -32,9 +32,12 @@
 		D2C1E87E2C4B2CE2003DEA20 /* NewsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C1E87D2C4B2CE2003DEA20 /* NewsDetailViewModel.swift */; };
 		D2C1E8822C4C0F7F003DEA20 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C1E8802C4C0F7F003DEA20 /* UsersViewController.swift */; };
 		D2C1E8832C4C0F7F003DEA20 /* UsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C1E8812C4C0F7F003DEA20 /* UsersViewController.xib */; };
+		ECD160590EEB4FB30A8FF45D /* Pods_JSONPlaceholderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DDF860186862A08F9472E9A /* Pods_JSONPlaceholderApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DDF860186862A08F9472E9A /* Pods_JSONPlaceholderApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSONPlaceholderApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		808F939D3FB01BA2D15CC6D1 /* Pods-JSONPlaceholderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONPlaceholderApp.release.xcconfig"; path = "Target Support Files/Pods-JSONPlaceholderApp/Pods-JSONPlaceholderApp.release.xcconfig"; sourceTree = "<group>"; };
 		D253932D2C4C178400DEF9F8 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		D253932F2C4C2B2F00DEF9F8 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		D28C23C52C4C144A009AEF78 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 		D2C1E87D2C4B2CE2003DEA20 /* NewsDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewModel.swift; sourceTree = "<group>"; };
 		D2C1E8802C4C0F7F003DEA20 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		D2C1E8812C4C0F7F003DEA20 /* UsersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersViewController.xib; sourceTree = "<group>"; };
+		D355B9AC769922B83DA0A226 /* Pods-JSONPlaceholderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONPlaceholderApp.debug.xcconfig"; path = "Target Support Files/Pods-JSONPlaceholderApp/Pods-JSONPlaceholderApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,12 +73,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECD160590EEB4FB30A8FF45D /* Pods_JSONPlaceholderApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21B66FF24A556E939F32F20F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D355B9AC769922B83DA0A226 /* Pods-JSONPlaceholderApp.debug.xcconfig */,
+				808F939D3FB01BA2D15CC6D1 /* Pods-JSONPlaceholderApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CDCD5F4CEC6A58709772C0DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2DDF860186862A08F9472E9A /* Pods_JSONPlaceholderApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D253932C2C4C175500DEF9F8 /* UsersViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +119,8 @@
 			children = (
 				D2C1E83A2C49DA0D003DEA20 /* JSONPlaceholderApp */,
 				D2C1E8392C49DA0D003DEA20 /* Products */,
+				21B66FF24A556E939F32F20F /* Pods */,
+				CDCD5F4CEC6A58709772C0DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -259,9 +283,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2C1E84C2C49DA0E003DEA20 /* Build configuration list for PBXNativeTarget "JSONPlaceholderApp" */;
 			buildPhases = (
+				E7AA45FB74CE4EE5FEEDA8E7 /* [CP] Check Pods Manifest.lock */,
 				D2C1E8342C49DA0D003DEA20 /* Sources */,
 				D2C1E8352C49DA0D003DEA20 /* Frameworks */,
 				D2C1E8362C49DA0D003DEA20 /* Resources */,
+				269E27D7868D249164C644FC /* [CP] Copy Pods Resources */,
+				D25393312C4C506000DEF9F8 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -321,6 +348,67 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		269E27D7868D249164C644FC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JSONPlaceholderApp/Pods-JSONPlaceholderApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JSONPlaceholderApp/Pods-JSONPlaceholderApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JSONPlaceholderApp/Pods-JSONPlaceholderApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D25393312C4C506000DEF9F8 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" \"${SRCROOT}/JSONPlaceholderApp\"\n\n";
+		};
+		E7AA45FB74CE4EE5FEEDA8E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JSONPlaceholderApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2C1E8342C49DA0D003DEA20 /* Sources */ = {
@@ -399,7 +487,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -414,7 +502,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -462,7 +550,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -471,7 +559,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -483,6 +571,7 @@
 		};
 		D2C1E84D2C49DA0E003DEA20 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D355B9AC769922B83DA0A226 /* Pods-JSONPlaceholderApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -511,6 +600,7 @@
 		};
 		D2C1E84E2C49DA0E003DEA20 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 808F939D3FB01BA2D15CC6D1 /* Pods-JSONPlaceholderApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
