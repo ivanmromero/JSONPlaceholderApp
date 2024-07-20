@@ -14,7 +14,7 @@ final class NewsDetailViewModel {
     var content: String { newsElement.content }
     var category: String { newsElement.category }
     var publishedAt: String { newsElement.publishedAt }
-    
+
     init(newsElement: NewsElement, coverImage: UIImage?) {
         self.newsElement = newsElement
         self.coverImage = coverImage

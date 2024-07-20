@@ -10,9 +10,9 @@ enum ServiceError: Error {
     case nilData
     case requestFailed(statusCode: Int, localizedDescription: String? = nil)
     case decodingError(localizedDescription: String? = nil)
-    
+
     func handleError() {
-        switch self { 
+        switch self {
         case .invalidURL:
             print("Error: Invalid URL.")
         case .nilData:
@@ -25,7 +25,7 @@ enum ServiceError: Error {
             printErrorDescription(with: localizedDescription)
         }
     }
-    
+
     private func printErrorDescription(with localizedDescription: String?) {
         if let localizedDescription = localizedDescription {
             print("Error Description: \(localizedDescription).")

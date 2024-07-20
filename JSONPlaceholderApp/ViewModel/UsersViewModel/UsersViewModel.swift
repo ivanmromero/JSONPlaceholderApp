@@ -10,13 +10,13 @@ import Foundation
 final class UsersViewModel {
     private let service: Service
     private var users: Users
-    
+
     init(service: Service) {
         self.service = service
         self.users = []
     }
-    
-    func fetchUsers(completion: @escaping ()->()) {
+
+    func fetchUsers(completion: @escaping () -> Void) {
         service.fetchData(for: .allUsers) { [weak self] (result: Result<Users, ServiceError>) in
             switch result {
             case .success(let users):
@@ -27,14 +27,14 @@ final class UsersViewModel {
             }
         }
     }
-    
+
     func getCountOfUsers() -> Int {
         users.count
     }
-    
+
     func getUser(for index: Int) -> User? {
         guard index >= 0 && index < getCountOfUsers() else { return nil }
-        
+
         return users[index]
     }
 }
