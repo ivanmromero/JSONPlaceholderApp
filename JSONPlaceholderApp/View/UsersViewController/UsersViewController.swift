@@ -76,5 +76,11 @@ extension UsersViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension UsersViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let user = viewModel.getUser(for: indexPath.row) {
+            let viewModel = UserMapViewModel(userAddress: user.address)
+            let viewController = UserMapViewController(viewModel: viewModel)
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
 }
