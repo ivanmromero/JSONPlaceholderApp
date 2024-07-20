@@ -8,6 +8,5 @@ target 'JSONPlaceholderApp' do
   # Pods for JSONPlaceholderApp
   
   pod 'SwiftLint'
-  pod 'GoogleMaps', '8.4.0'
   
 end
