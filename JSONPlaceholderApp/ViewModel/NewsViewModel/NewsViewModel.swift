@@ -59,7 +59,8 @@ final class NewsViewModel {
     }
     
     func getNewsElement(at index: Int) -> NewsElement? {
-        guard index >= 0 && index < filteredNews.count else { return nil }
+        guard index >= 0 && index < getCountOfNews() else { return nil }
+        
         return filteredNews[index]
     }
     

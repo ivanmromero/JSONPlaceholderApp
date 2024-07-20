@@ -23,8 +23,7 @@ class TabBarViewController: UITabBarController {
         let service: Service = Service()
         
         let firstVC = UINavigationController(rootViewController: getNewsViewController(service: service))
-        let secondVC = UINavigationController(rootViewController: UIViewController())
-        secondVC.viewControllers.first?.view.backgroundColor = .gray
+        let secondVC = UINavigationController(rootViewController: getUsersViewController(service: service))
         
         firstVC.setTabBarItem(title: "News", image: UIImage(systemName: "newspaper"))
         secondVC.setTabBarItem(title: "Users", image: UIImage(systemName: "person.crop.circle.fill"))
@@ -34,7 +33,14 @@ class TabBarViewController: UITabBarController {
     
     private func getNewsViewController(service: Service) -> NewsViewController {
         let viewModel = NewsViewModel(service: service)
+        
         return NewsViewController(viewModel: viewModel)
+    }
+    
+    private func getUsersViewController(service: Service) -> UsersViewController {
+        let viewModel = UsersViewModel(service: service)
+        
+        return UsersViewController(viewModel: viewModel)
     }
     
     private func setupAppearance() {
