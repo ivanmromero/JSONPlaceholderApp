@@ -29,25 +29,21 @@ final class NewsViewModel {
             switch result {
             case .success(let news):
                 self?.news = news
-                self?.fecthThumbnailImages(completion: completion)
+                self?.fetchThumbnailImages(completion: completion)
             case .failure(let error):
                 error.handleError()
             }
         }
     }
     
-    private func fecthThumbnailImages(completion: @escaping () -> ()) {
+    private func fetchThumbnailImages(completion: @escaping () -> ()) {
         let group = DispatchGroup()
         
-        for newsItem in news {
+        for newsElement in news {
             group.enter()
-            service.fetchData(for: URL(string: newsItem.thumbnail)) { [weak self] (result: Result<Data, ServiceError>) in
-                guard let self = self else { return }
-                switch result {
-                case .success(let data):
-                    self.thumbnailImages[newsItem.thumbnail] = UIImage(data: data)
-                case .failure(let error):
-                    error.handleError()
+            service.fetchImage(url: newsElement.thumbnail) { [weak self] image in
+                if let image = image {
+                    self?.thumbnailImages[newsElement.thumbnail] = image
                 }
                 group.leave()
             }
@@ -56,6 +52,10 @@ final class NewsViewModel {
         group.notify(queue: .main) {
             completion()
         }
+    }
+    
+    func getImage(for newsElement: NewsElement, completion: @escaping (UIImage?) -> ()) {
+        service.fetchImage(url: newsElement.image, completion: completion)
     }
     
     func getNewsElement(at index: Int) -> NewsElement? {

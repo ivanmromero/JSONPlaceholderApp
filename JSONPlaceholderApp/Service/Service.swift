@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Service {
     func fetchData<T: Decodable>(for path: ServicePath ,completion: @escaping (Result<T, ServiceError>) -> ()) {
@@ -61,6 +62,19 @@ class Service {
             completion(.success(data))
             
         }.resume()
+    }
+    
+    func fetchImage(url: String, completion: @escaping (UIImage?) -> ()) {
+        fetchData(for: URL(string: url)) { (result: Result<Data, ServiceError>) in
+            switch result {
+            case .success(let data):
+                let image = UIImage(data: data)
+                completion(image)
+            case .failure(let error):
+                error.handleError()
+                completion(nil)
+            }
+        }
     }
     
     private func getURL(for servicePath: ServicePath) -> URL? {
