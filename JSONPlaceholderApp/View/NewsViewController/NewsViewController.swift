@@ -29,6 +29,7 @@ class NewsViewController: UIViewController {
     }
     
     private func setup() {
+        title = "News"
         setup(tableView: tableView)
         setup(searchBar: searchBar)
         fetchNews()
@@ -79,7 +80,19 @@ extension NewsViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension NewsViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let newsElement = viewModel.getNewsElement(at: indexPath.row) {
+            
+            viewModel.getImage(for: newsElement) { [weak self] coverImage in
+                DispatchQueue.main.async {
+                    let viewModel = NewsDetailViewModel(newsElement: newsElement, coverImage: coverImage)
+                    let viewController = NewsDetailViewController(viewModel: viewModel)
+                    
+                    self?.navigationController?.pushViewController(viewController, animated: true)
+                }
+            }
+        }
+    }
 }
 
 // MARK: - UISearchBarDelegate
@@ -87,7 +100,6 @@ extension NewsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.filterNews(for: searchText)
         tableView.reloadData()
-        print(viewModel.getCountOfNews())
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
