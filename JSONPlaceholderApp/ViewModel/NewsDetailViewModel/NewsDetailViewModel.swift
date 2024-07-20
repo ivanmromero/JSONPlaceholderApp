@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewsDetailViewModel {
+final class NewsDetailViewModel {
     private let newsElement: NewsElement
     let coverImage: UIImage?
     var title: String { newsElement.title }
