@@ -30,7 +30,7 @@ final class UserMapViewModel {
             URLQueryItem(name: "q", value: "\(latitude),\(longitude)"),
             URLQueryItem(name: "ll", value: "\(latitude),\(longitude)"),
             URLQueryItem(name: "z", value: "15"),
-            URLQueryItem(name: "markers", value: "color:red%7C\(latitude),\(longitude)")
+            URLQueryItem(name: "markers", value: "color:red|\(latitude),\(longitude)")
         ]
 
         return components.url

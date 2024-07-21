@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class UserMapViewController: UIViewController {
+final class UserMapViewController: UIViewController {
     @IBOutlet weak var streetLabel: UILabel!
     @IBOutlet weak var zipCodeLabel: UILabel!
     @IBOutlet weak var webView: WKWebView!

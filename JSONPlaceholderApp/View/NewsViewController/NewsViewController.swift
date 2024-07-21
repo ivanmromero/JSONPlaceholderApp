@@ -7,8 +7,7 @@
 
 import UIKit
 
-class NewsViewController: UIViewController {
-
+final class NewsViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
 
@@ -68,8 +67,8 @@ extension NewsViewController: UITableViewDataSource {
         }
 
         if let newsElement = viewModel.getNewsElement(at: indexPath.row) {
-            cell.title.text = newsElement.title
-            cell.littleContent.text = newsElement.content
+            cell.titleLabel.text = newsElement.title
+            cell.littleContentLabel.text = newsElement.content
             cell.thumbnailImage.image = viewModel.getThumbnailImage(for: newsElement.thumbnail)
             cell.accessoryType = .disclosureIndicator
         }
