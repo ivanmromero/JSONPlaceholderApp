@@ -7,8 +7,7 @@
 
 import UIKit
 
-class NewsDetailViewController: UIViewController {
-
+final class NewsDetailViewController: UIViewController {
     @IBOutlet weak var coverImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!

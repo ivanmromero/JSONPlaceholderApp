@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UsersViewController: UIViewController {
+final class UsersViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     private let viewModel: UsersViewModel
@@ -60,7 +60,7 @@ extension UsersViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        if let user = viewModel.getUser(for: indexPath.row) {
+        if let user = viewModel.getUser(at: indexPath.row) {
             cell.set(text: user.firstname, for: .firstName)
             cell.set(text: user.lastname, for: .lastName)
             cell.set(text: user.birthDate, for: .birthDate)
@@ -77,7 +77,7 @@ extension UsersViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension UsersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let user = viewModel.getUser(for: indexPath.row) {
+        if let user = viewModel.getUser(at: indexPath.row) {
             let viewModel = UserMapViewModel(userAddress: user.address)
             let viewController = UserMapViewController(viewModel: viewModel)
             self.navigationController?.pushViewController(viewController, animated: true)

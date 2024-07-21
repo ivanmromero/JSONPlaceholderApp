@@ -63,9 +63,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="littleContent" destination="kWy-Eh-b7S" id="Boy-R3-2lD"/>
+                <outlet property="littleContentLabel" destination="kWy-Eh-b7S" id="Boy-R3-2lD"/>
                 <outlet property="thumbnailImage" destination="Xho-tP-rnA" id="cn8-Qo-b1h"/>
-                <outlet property="title" destination="1DA-GV-LuT" id="T4s-c3-MfE"/>
+                <outlet property="titleLabel" destination="1DA-GV-LuT" id="T4s-c3-MfE"/>
             </connections>
             <point key="canvasLocation" x="86.25954198473282" y="1.4084507042253522"/>
         </tableViewCell>

@@ -32,7 +32,7 @@ final class UsersViewModel {
         users.count
     }
 
-    func getUser(for index: Int) -> User? {
+    func getUser(at index: Int) -> User? {
         guard index >= 0 && index < getCountOfUsers() else { return nil }
 
         return users[index]
