@@ -8,6 +8,7 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
+    private let service: Service = Service()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,24 +21,34 @@ class TabBarViewController: UITabBarController {
     }
 
     private func setupViewControllers() {
-        let service: Service = Service()
+        let viewControllers = [
+            createNavigationController(viewController: createNewsViewController(),
+                                       title: "News",
+                                       imageName: "newspaper"),
+            createNavigationController(viewController: createUsersViewController(),
+                                       title: "Users",
+                                       imageName: "person.crop.circle.fill")
+        ]
 
-        let firstVC = UINavigationController(rootViewController: getNewsViewController(service: service))
-        let secondVC = UINavigationController(rootViewController: getUsersViewController(service: service))
-
-        firstVC.setTabBarItem(title: "News", image: UIImage(systemName: "newspaper"))
-        secondVC.setTabBarItem(title: "Users", image: UIImage(systemName: "person.crop.circle.fill"))
-
-        self.setViewControllers([firstVC, secondVC], animated: false)
+        self.setViewControllers(viewControllers, animated: false)
     }
 
-    private func getNewsViewController(service: Service) -> NewsViewController {
+    private func createNavigationController(viewController: UIViewController,
+                                            title: String,
+                                            imageName: String) -> UINavigationController {
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.setTabBarItem(title: title, image: UIImage(systemName: imageName))
+
+        return navigationController
+    }
+
+    private func createNewsViewController() -> NewsViewController {
         let viewModel = NewsViewModel(service: service)
 
         return NewsViewController(viewModel: viewModel)
     }
 
-    private func getUsersViewController(service: Service) -> UsersViewController {
+    private func createUsersViewController() -> UsersViewController {
         let viewModel = UsersViewModel(service: service)
 
         return UsersViewController(viewModel: viewModel)
