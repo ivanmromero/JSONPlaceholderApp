@@ -4,7 +4,7 @@
 
 La aplicación tiene como objetivo mostrar noticias y detalles asociados a ellas, así como tambien información de usuarios y sus ubicaciones
 
-## Patrones de Diseño
+## Patron de arquitectura
 
 ### Model-View-ViewModel (MVVM)
 
